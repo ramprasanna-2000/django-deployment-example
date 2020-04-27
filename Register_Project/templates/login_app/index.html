@@ -1,0 +1,11 @@
+{% extends 'login_app/base.html' %}
+
+{% block body_block %}
+{% if user.is_authenticated %}
+<h2>Welcome {{ user.username }}</h2>
+<h2>Do Whatever You Want !! Enjoy!!</h2>
+{% else %}
+<h2>Welcome to the Blog</h2>
+<h2>Please register to make use of this Blog</h2>
+{% endif %}
+{% endblock %}

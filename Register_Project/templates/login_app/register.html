@@ -1,0 +1,16 @@
+{% extends 'login_app/base.html' %}
+{% load static %}
+{% block body_block %}
+{% if registered or user.is_authenticated %}
+<h2>Thank you for Registering into our App</h2>
+{% else %}
+<h2>Register Here!!</h2>
+<h2>Please Fill out the Form Below to Register:</h2>
+<form enctype="multipart/form-data" method="post">
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  {% csrf_token %}
+  <input type="submit" class="btn btn-primary" value="Register">
+</form>
+{% endif %}
+{% endblock %}
